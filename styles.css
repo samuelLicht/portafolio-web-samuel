@@ -322,4 +322,14 @@ footer {
   .hero p {
     font-size: 17px;
   }
+  
+}
+.project-status {
+  display: inline-block;
+  color: #f0b429;
+  font-weight: bold;
+  background: rgba(240, 180, 41, 0.1);
+  border: 1px solid rgba(240, 180, 41, 0.35);
+  padding: 8px 12px;
+  border-radius: 8px;
 }
