@@ -169,6 +169,37 @@ body {
   font-size: 17px;
 }
 
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.learning-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  padding: 24px;
+  transition: 0.3s ease;
+}
+
+.learning-card:hover {
+  transform: translateY(-5px);
+  border-color: #58a6ff;
+  box-shadow: 0 15px 35px rgba(88, 166, 255, 0.12);
+}
+
+.learning-card h3 {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.learning-card p {
+  color: #c9d1d9;
+  font-size: 15px;
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -254,6 +285,10 @@ footer {
 
   .hero h1 {
     font-size: 42px;
+  }
+
+  .learning-grid {
+    grid-template-columns: 1fr;
   }
 
   .projects-grid {
