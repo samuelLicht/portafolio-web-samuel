@@ -12,7 +12,7 @@ Su objetivo es presentar mi perfil, mis tecnologías principales, mi ruta de apr
 
 Puedes ver el portafolio publicado en GitHub Pages:
 
-https://samuelllicht.github.io/portafolio-web-samuel/
+https://samuellicht.github.io/portafolio-web-samuel/
 
 ## Tecnologías utilizadas
 
