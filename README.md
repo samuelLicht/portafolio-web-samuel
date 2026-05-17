@@ -8,6 +8,10 @@ El proyecto consiste en una página web personal desarrollada con HTML, CSS y Ja
 
 Su objetivo es presentar mi perfil, mis tecnologías principales, mi ruta de aprendizaje y mis proyectos destacados.
 
+## Vista previa
+
+![Vista previa del portafolio](assets/img/preview.png)
+
 ## Vista en línea
 
 Puedes ver el portafolio publicado en GitHub Pages:
@@ -56,7 +60,11 @@ portafolio-web-samuel/
 ├── script.js
 ├── README.md
 └── assets/
-    └── img/
+    ├── img/
+    │   ├── perfil.jpg
+    │   └── preview.png
+    └── docs/
+        └── cv-samuel.pdf
 ```
 
 ## Cómo ejecutar el proyecto
@@ -80,6 +88,10 @@ cd portafolio-web-samuel
 - Se creó la estructura inicial del portafolio.
 - Se agregó una sección de ruta de aprendizaje.
 - Se documentaron tecnologías, objetivos y estructura del proyecto.
+- Se publicó el portafolio con GitHub Pages.
+- Se agregó imagen de perfil al hero.
+- Se agregó botón de descarga de CV.
+- Se actualizó README con vista previa del portafolio.
 
 ## Autor
 
