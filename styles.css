@@ -125,7 +125,6 @@ body {
   background: rgba(88, 166, 255, 0.1);
 }
 
-/* ── Botón CV - Día 6 ── */
 .btn-cv {
   display: inline-flex;
   align-items: center;
@@ -244,7 +243,7 @@ body {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
 }
 
@@ -309,7 +308,7 @@ footer {
   border-top: 1px solid #30363d;
 }
 
-/* ── Imagen de perfil - Día 5 ── */
+/* ── Imagen de perfil ── */
 .hero-profile {
   display: flex;
   flex-direction: column;
@@ -335,14 +334,99 @@ footer {
   display: block;
 }
 
-/* ── Responsive ── */
+/* ── Responsive tablet ── */
 @media (max-width: 950px) {
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 14px 5%;
+    gap: 10px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 14px;
+    font-size: 14px;
+  }
+
   .hero {
     grid-template-columns: 1fr;
+    padding: 60px 6%;
+    min-height: auto;
   }
 
   .hero h1 {
     font-size: 42px;
+  }
+
+  .hero-profile {
+    align-items: center;
+  }
+
+  .profile-image-container {
+    width: 190px;
+    height: 190px;
+  }
+
+  .learning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Responsive mobile ── */
+@media (max-width: 500px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 5%;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .menu a {
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 50px 5%;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-profile {
+    align-items: center;
+  }
+
+  .profile-image-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  .section {
+    padding: 50px 5%;
+  }
+
+  .section h2 {
+    font-size: 28px;
   }
 
   .learning-grid {
@@ -353,45 +437,17 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .navbar {
+  .hero-buttons {
     flex-direction: column;
-    gap: 15px;
-  }
-
-  .menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero-profile {
     align-items: flex-start;
   }
 
-  .profile-image-container {
-    width: 190px;
-    height: 190px;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero {
-    padding: 70px 6%;
+  .btn {
+    width: 100%;
+    text-align: center;
   }
 
-  .section {
-    padding: 60px 6%;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .hero p {
-    font-size: 17px;
-  }
-
-  .profile-image-container {
-    width: 160px;
-    height: 160px;
+  .btn-cv {
+    justify-content: center;
   }
 }
