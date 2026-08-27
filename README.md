@@ -8,9 +8,7 @@ El proyecto consiste en una página web personal desarrollada con HTML, CSS y Ja
 
 Su objetivo es presentar mi perfil, mis tecnologías principales, mi ruta de aprendizaje y mis proyectos destacados.
 
-## Vista previa
 
-![Vista previa del portafolio](assets/img/preview.png)
 
 ## Vista en línea
 
