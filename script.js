@@ -1,14 +1,49 @@
 console.log("Portafolio cargado correctamente");
 
-const projectCards = document.querySelectorAll(".project-card");
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
 
-projectCards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    card.style.boxShadow = "0 15px 35px rgba(88, 166, 255, 0.15)";
+document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+const heroBg = document.querySelector(".hero-bg");
+
+if (heroBg) {
+  window.addEventListener("scroll", () => {
+    const offset = window.scrollY * 0.15;
+    heroBg.style.backgroundPosition = `center calc(60% + ${offset}px)`;
   });
+}
 
-  card.addEventListener("mouseleave", () => {
-    card.style.boxShadow = "none";
+const vangogh = document.querySelector(".profile-image-container");
+const heroSection = document.querySelector(".hero");
+
+if (vangogh && heroSection) {
+  const updateVangoghFade = () => {
+    const fadeDistance = heroSection.offsetHeight * 0.65;
+    const progress = Math.min(window.scrollY / fadeDistance, 1);
+    vangogh.style.opacity = String(1 - progress);
+  };
+
+  window.addEventListener("scroll", updateVangoghFade);
+  updateVangoghFade();
+}
+
+document.querySelectorAll(".project-face").forEach((face) => {
+  face.addEventListener("click", () => {
+    const card = face.closest(".project-card");
+    const isExpanded = face.getAttribute("aria-expanded") === "true";
+
+    face.setAttribute("aria-expanded", String(!isExpanded));
+    card.classList.toggle("expanded", !isExpanded);
   });
 });
 

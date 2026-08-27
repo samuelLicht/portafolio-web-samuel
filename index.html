@@ -24,40 +24,50 @@
   <main>
  
     <section id="inicio" class="hero">
-      <div class="hero-text">
-        <span class="badge">Portafolio personal</span>
-        <h1>Hola, soy Samuel</h1>
-        <p>
-          Estudiante de Ingeniería de Sistemas, interesado en desarrollo web,
-          backend, inteligencia artificial, análisis de datos y creación de soluciones digitales.
-        </p>
-        <div class="hero-buttons">
-          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-          <a href="https://github.com/samuelLicht" target="_blank" class="btn btn-secondary">GitHub</a>
-          <a href="assets/docs/Samuel_Rodolfo_Diaz_Licht_CV.pdf" download class="btn btn-cv">
-            ⬇ Descargar CV
-          </a>
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="badge">Portafolio personal</span>
+          <h1>Hola, soy <span class="accent">Samuel</span></h1>
+          <p>
+            Estudiante de Ingeniería de Sistemas, interesado en desarrollo web,
+            backend, inteligencia artificial, análisis de datos y creación de soluciones digitales.
+          </p>
+          <div class="hero-buttons">
+            <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+            <a href="https://github.com/samuelLicht" target="_blank" class="btn btn-secondary">GitHub</a>
+            <a href="assets/docs/Samuel_Rodolfo_Diaz_Licht_CV.pdf" download class="btn btn-cv">
+              ⬇ Descargar CV
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-profile">
+          <div class="profile-image-container">
+            <img src="assets/img/vangogh.png" alt="Retrato de Van Gogh" class="profile-image">
+          </div>
+          <div class="hero-card">
+            <h3>Actualmente aprendiendo</h3>
+            <ul>
+              <li>Node.js & MongoDB</li>
+              <li>Spring Security & JWT</li>
+              <li>WebSockets & tiempo real</li>
+              <li>Arquitecturas RAG con IA</li>
+              <li>Flutter & Dart</li>
+            </ul>
+          </div>
         </div>
       </div>
- 
-      <div class="hero-profile">
-        <div class="profile-image-container">
-          <img src="assets/img/perfil.jpg" alt="Foto de perfil de Samuel Licht" class="profile-image">
-        </div>
-        <div class="hero-card">
-          <h3>Actualmente aprendiendo</h3>
-          <ul>
-            <li>Node.js & MongoDB</li>
-            <li>Spring Security & JWT</li>
-            <li>WebSockets & tiempo real</li>
-            <li>Arquitecturas RAG con IA</li>
-            <li>Flutter & Dart</li>
-          </ul>
-        </div>
-      </div>
+
+      <a href="#sobre-mi" class="scroll-cue" aria-label="Bajar a la siguiente sección">
+        <span></span>
+      </a>
     </section>
  
-    <section id="sobre-mi" class="section">
+    <section id="sobre-mi" class="section reveal">
+      <span class="kicker">01 · Quién soy</span>
       <h2>Sobre mí</h2>
       <p>
         Me gusta crear proyectos funcionales, mejorar interfaces, aprender nuevas tecnologías
@@ -69,7 +79,8 @@
       </p>
     </section>
  
-    <section id="aprendizaje" class="section">
+    <section id="aprendizaje" class="section reveal">
+      <span class="kicker">02 · En progreso</span>
       <h2>Ruta de aprendizaje</h2>
       <p>
         Esta sección muestra las áreas en las que estoy fortaleciendo mis conocimientos
@@ -108,7 +119,8 @@
     </section>
  
     <!-- ===== CERTIFICACIONES ===== -->
-    <section id="certificaciones" class="section">
+    <section id="certificaciones" class="section reveal">
+      <span class="kicker">03 · Respaldo</span>
       <h2>Certificaciones</h2>
       <p>
         Cursos y certificaciones completados que complementan mi formación
@@ -162,172 +174,109 @@
     </section>
     <!-- ===== FIN CERTIFICACIONES ===== -->
  
-    <section id="tecnologias" class="section">
+    <section id="tecnologias" class="section reveal">
+      <span class="kicker">04 · Stack</span>
       <h2>Tecnologías</h2>
-      <div class="skills">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Python</span>
-        <span>Java</span>
-        <span>Spring Boot</span>
-        <span>Node.js</span>
-        <span>Express</span>
-        <span>MySQL</span>
-        <span>PostgreSQL</span>
-        <span>MongoDB</span>
-        <span>JWT</span>
-        <span>Socket.io</span>
-        <span>Git</span>
-        <span>GitHub</span>
+      <div class="skills-groups">
+        <div class="skills-group">
+          <h3 class="skills-group-title">Frontend</h3>
+          <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">Backend</h3>
+          <div class="skills">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>JWT</span>
+            <span>Socket.io</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">Bases de datos</h3>
+          <div class="skills">
+            <span>MySQL</span>
+            <span>PostgreSQL</span>
+            <span>MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3 class="skills-group-title">Herramientas &amp; Lenguajes</h3>
+          <div class="skills">
+            <span>Python</span>
+            <span>Git</span>
+            <span>GitHub</span>
+          </div>
+        </div>
       </div>
     </section>
  
-    <section id="proyectos" class="section">
+    <section id="proyectos" class="section reveal">
+      <span class="kicker">05 · Trabajo</span>
       <h2>Proyectos</h2>
+      <p>Selecciona un proyecto para ver los detalles.</p>
+
       <div class="projects-grid">
- 
+
         <article class="project-card">
-          <h3>Expense Tracker</h3>
-          <p>
-            Fullstack expense tracker built with Node.js, Express, MongoDB and Chart.js.
-            Includes JWT authentication, income and expense CRUD, filters by category,
-            and a dashboard with charts showing spending by category.
-          </p>
-          <a href="https://github.com/samuelLicht/expense-tracker" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
+          <button class="project-face" type="button" aria-expanded="false" aria-controls="proj-rag-chatbot">
+            <div class="project-visual">
+              <svg class="project-icon" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M35 30h95c9 0 16 7 16 16v48c0 9-7 16-16 16H84l-24 20v-20H35c-9 0-16-7-16-16V46c0-9 7-16 16-16z"
+                      stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" fill="rgba(227,179,65,0.06)"/>
+                <circle cx="150" cy="35" r="5" fill="var(--accent)"/>
+                <circle cx="175" cy="55" r="4" fill="var(--accent-blue)"/>
+                <circle cx="168" cy="85" r="5" fill="var(--accent)"/>
+                <circle cx="140" cy="100" r="4" fill="var(--accent-blue)"/>
+                <circle cx="146" cy="65" r="3.5" fill="#ffffff"/>
+                <path d="M146 65 L150 35 M146 65 L175 55 M146 65 L168 85 M146 65 L140 100 M168 85 L175 55"
+                      stroke="var(--accent)" stroke-width="1.5" opacity="0.55"/>
+                <circle cx="60" cy="58" r="6" fill="var(--accent)"/>
+                <circle cx="86" cy="58" r="6" fill="var(--accent-blue)"/>
+                <circle cx="112" cy="58" r="6" fill="var(--accent)"/>
+                <path d="M52 78h68" stroke="rgba(201,209,217,0.5)" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="project-face-info">
+              <h3>RAG Chatbot</h3>
+              <p class="project-subtitle">Chatbot inteligente con recuperación de información</p>
+            </div>
+            <span class="project-toggle">
+              Ver proyecto
+              <span class="chevron" aria-hidden="true">⌄</span>
+            </span>
+          </button>
+
+          <div class="project-details" id="proj-rag-chatbot">
+            <p>
+              Chatbot inteligente basado en recuperación de información (RAG) desarrollado
+              en Python. Recuperación semántica por embeddings e indexado vectorial con FAISS.
+            </p>
+            <div class="project-stack">
+              <span>Python</span>
+              <span>FAISS</span>
+              <span>Embeddings</span>
+              <span>LLM</span>
+            </div>
+            <a href="https://github.com/samuelLicht/rag-chatbot" target="_blank" class="project-link">
+              Ver repositorio ↗
+            </a>
+          </div>
         </article>
- 
-        <article class="project-card">
-          <h3>Notes API</h3>
-          <p>
-            REST API for notes management built with Node.js, Express and MongoDB.
-            Includes JWT authentication, full CRUD, tag filtering and
-            pinned notes. Each user only accesses their own notes.
-          </p>
-          <a href="https://github.com/samuelLicht/notes-api" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
-        <article class="project-card">
-          <h3>Chat App</h3>
-          <p>
-            Real-time chat application built with Node.js, Express and Socket.io.
-            Supports multiple users, online counter, typing indicator and
-            join/leave notifications.
-          </p>
-          <a href="https://github.com/samuelLicht/chat-app" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
-        <article class="project-card">
-          <h3>Blog API</h3>
-          <p>
-            REST API for a blog system built with Java and Spring Boot.
-            Includes JWT authentication, user registration, roles and full
-            post CRUD with author-based authorization.
-          </p>
-          <a href="https://github.com/samuelLicht/blog-api" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
-        <article class="project-card">
-          <h3>Blog Frontend</h3>
-          <p>
-            Web interface for the blog system built with HTML, CSS and JavaScript.
-            Connects to the REST API, supports login, register, create and delete posts.
-          </p>
-          <a href="https://github.com/samuelLicht/blog-frontend" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
-        <article class="project-card">
-          <h3>Task Manager</h3>
-          <p>
-            Sistema de gestión de tareas con backend en Java y Spring Boot, base de datos
-            MySQL y frontend en HTML, CSS y JavaScript. API REST completa con CRUD.
-          </p>
-          <a href="https://github.com/samuelLicht/task-manager" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
-        <article class="project-card">
-          <h3>RAG Chatbot</h3>
-          <p>
-            Chatbot inteligente basado en recuperación de información (RAG) desarrollado
-            en Python. Recuperación semántica por embeddings e indexado vectorial con FAISS.
-          </p>
-          <a href="https://github.com/samuelLicht/rag-chatbot" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
-        <article class="project-card">
-          <h3>Weather App</h3>
-          <p>
-            App del clima que consume la API de OpenWeatherMap. Muestra temperatura,
-            humedad, viento y visibilidad de cualquier ciudad del mundo.
-          </p>
-          <a href="https://samuellicht.github.io/weather-app/" target="_blank" class="project-link">
-            Ver en vivo
-          </a>
-          &nbsp;&nbsp;
-          <a href="https://github.com/samuelLicht/weather-app" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
-        <article class="project-card">
-          <h3>Conversor de Monedas</h3>
-          <p>
-            Conversor de monedas con tasas de cambio en tiempo real usando la API
-            de ExchangeRate. Soporta más de 15 monedas internacionales.
-          </p>
-          <a href="https://samuellicht.github.io/currency-converter/" target="_blank" class="project-link">
-            Ver en vivo
-          </a>
-          &nbsp;&nbsp;
-          <a href="https://github.com/samuelLicht/currency-converter" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
-        <article class="project-card">
-          <h3>To-Do List</h3>
-          <p>
-            Aplicación de tareas con HTML, CSS y JavaScript. Permite agregar, completar,
-            eliminar y filtrar tareas con persistencia en localStorage.
-          </p>
-          <a href="https://samuellicht.github.io/to-do-list/" target="_blank" class="project-link">
-            Ver en vivo
-          </a>
-          &nbsp;&nbsp;
-          <a href="https://github.com/samuelLicht/to-do-list" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
-        <article class="project-card">
-          <h3>Portafolio Web Personal</h3>
-          <p>
-            Página web personal desarrollada con HTML, CSS y JavaScript para presentar
-            mi perfil, tecnologías, ruta de aprendizaje y proyectos.
-          </p>
-          <a href="https://github.com/samuelLicht/portafolio-web-samuel" target="_blank" class="project-link">
-            Ver repositorio
-          </a>
-        </article>
- 
+
       </div>
     </section>
  
-    <section id="contacto" class="section contact-section">
+    <section id="contacto" class="section contact-section reveal">
+      <span class="kicker">06 · Hablemos</span>
       <h2>Contacto</h2>
       <p>
         Puedes ver mis proyectos y avances directamente en mi perfil de GitHub.
