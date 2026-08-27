@@ -10,12 +10,6 @@ Su objetivo es presentar mi perfil, mis tecnologías principales, mi ruta de apr
 
 
 
-## Vista en línea
-
-Puedes ver el portafolio publicado en GitHub Pages:
-
-https://samuellicht.github.io/portafolio-web-samuel/
-
 ## Tecnologías utilizadas
 
 - HTML
