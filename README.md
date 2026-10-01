@@ -2,6 +2,10 @@
 
 Este es mi portafolio web personal, creado para mostrar mis proyectos, habilidades y tecnologías como estudiante de Ingeniería de Sistemas.
 
+## Demo en vivo
+
+🔗 **[portafolio-web-samuel.vercel.app](https://portafolio-web-samuel.vercel.app/)**
+
 ## Descripción
 
 El proyecto es una página web personal estática desarrollada con HTML, CSS y JavaScript, sin frameworks ni dependencias.
@@ -108,6 +112,7 @@ o abrir la carpeta en VS Code y usar la extensión Live Server.
 - Se agregó una sección de ruta de aprendizaje.
 - Se documentaron tecnologías, objetivos y estructura del proyecto.
 - Se publicó el portafolio con GitHub Pages.
+- Se desplegó el portafolio en Vercel.
 - Se agregó botón de descarga de CV.
 - Se rediseñó la interfaz completa con identidad negro y dorado.
 - Se agregó intro animada con el monograma SL y frases en japonés.
