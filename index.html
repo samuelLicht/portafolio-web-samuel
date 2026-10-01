@@ -3,69 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio | Samuel Licht</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Samuel Licht | Portafolio</title>
+  <meta name="description" content="Portafolio de Samuel Licht, estudiante de Ingeniería de Sistemas interesado en desarrollo web, backend, inteligencia artificial y análisis de datos." />
+  <meta name="theme-color" content="#080808" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <script>
+    // Define el estado inicial antes de pintar para evitar parpadeos
+    (function (d) {
+      var r = d.documentElement, seen = false;
+      r.classList.add("js");
+      try { seen = sessionStorage.getItem("sl-intro") === "1"; } catch (e) {}
+      if (seen) { r.classList.add("ready"); }
+      else { r.classList.add("intro-on", "scroll-locked"); }
+      setTimeout(function () {
+        if (r.classList.contains("intro-on")) { r.classList.add("ready"); r.classList.remove("scroll-locked", "intro-on"); }
+      }, 5000);
+    })(document);
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="preload" as="image" href="assets/img/perfil-hero.webp" type="image/webp" />
 </head>
 <body>
- 
-  <header class="navbar">
-    <div class="logo">Samuel Licht</div>
-    <nav class="menu">
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#aprendizaje">Aprendizaje</a>
-      <a href="#certificaciones">Certificaciones</a>
-      <a href="#tecnologias">Tecnologías</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <!-- Intro SL (monograma original, dibujado con trazos) -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <svg class="intro-mark" viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg" role="presentation">
+      <defs>
+        <linearGradient id="intro-gold" gradientUnits="userSpaceOnUse" x1="30" y1="10" x2="210" y2="140">
+          <stop offset="0" stop-color="#f1d9a0" />
+          <stop offset="0.5" stop-color="#c9a86a" />
+          <stop offset="1" stop-color="#8a7547" />
+        </linearGradient>
+        <linearGradient id="intro-shine" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff6dc" stop-opacity="0" />
+          <stop offset="0.5" stop-color="#fff6dc" stop-opacity="0.95" />
+          <stop offset="1" stop-color="#fff6dc" stop-opacity="0" />
+        </linearGradient>
+        <mask id="intro-letters" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="150">
+          <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M98 38C92 22 72 18 58 24C40 32 40 54 60 64C80 74 100 82 96 104C92 122 66 126 50 116C41 110 36 102 35 94" />
+            <path d="M140 18V112H208" />
+          </g>
+        </mask>
+      </defs>
+      <path class="stroke s-path" pathLength="1" d="M98 38C92 22 72 18 58 24C40 32 40 54 60 64C80 74 100 82 96 104C92 122 66 126 50 116C41 110 36 102 35 94" />
+      <path class="stroke l-path" pathLength="1" d="M140 18V112H208" />
+      <path class="stroke rule" pathLength="1" d="M30 134H208" />
+      <path class="diamond" d="M119 128l6 6-6 6-6-6z" />
+      <g mask="url(#intro-letters)">
+        <rect class="shine" x="20" y="0" width="70" height="150" fill="url(#intro-shine)" />
+      </g>
+    </svg>
+  </div>
+
+  <header class="nav">
+    <a href="#inicio" class="nav-brand" aria-label="Samuel Licht, ir al inicio">
+      <span class="mono" aria-hidden="true">SL</span>
+      <span>Samuel Licht</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav aria-label="Principal">
+      <ul class="nav-links" id="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#aprendizaje">Aprendizaje</a></li>
+        <li><a href="#certificaciones">Certificaciones</a></li>
+        <li><a href="#tecnologias">Tecnologías</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
   </header>
- 
-  <main>
- 
-    <section id="inicio" class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-overlay"></div>
 
-      <div class="hero-content">
-        <div class="hero-text">
-          <span class="badge">Portafolio personal</span>
-          <h1>Hola, soy <span class="accent">Samuel</span></h1>
-          <p>
-            Estudiante de Ingeniería de Sistemas, interesado en desarrollo web,
-            backend, inteligencia artificial, análisis de datos y creación de soluciones digitales.
+  <main id="contenido">
+
+    <section id="inicio" class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-in style="--d:0">Portafolio personal</p>
+          <h1>
+            <span class="line" data-in style="--d:1">Samuel</span>
+            <span class="line accent" data-in style="--d:2">Licht</span>
+          </h1>
+          <p class="hero-role" data-in style="--d:3">Estudiante de Ingeniería de Sistemas</p>
+          <p class="hero-lead" data-in style="--d:4">
+            Me interesa el desarrollo web, el backend, la inteligencia artificial
+            y el análisis de datos, y crear soluciones digitales que funcionen de verdad.
           </p>
-          <div class="hero-buttons">
-            <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-            <a href="https://github.com/samuelLicht" target="_blank" class="btn btn-secondary">GitHub</a>
-            <a href="assets/docs/Samuel_Rodolfo_Diaz_Licht_CV.pdf" download class="btn btn-cv">
-              ⬇ Descargar CV
+          <div class="hero-actions" data-in style="--d:5">
+            <a href="#proyectos" class="btn btn-primary">
+              Ver proyectos
+              <svg class="down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
             </a>
+            <a href="assets/docs/Samuel_Rodolfo_Diaz_Licht_CV.pdf" download class="btn btn-ghost">Descargar CV</a>
+            <a href="https://github.com/samuelLicht" target="_blank" rel="noopener" class="link-quiet">GitHub ↗</a>
           </div>
         </div>
 
-        <div class="hero-profile">
-          <div class="profile-image-container">
-            <img src="assets/img/vangogh.png" alt="Retrato de Van Gogh" class="profile-image">
-          </div>
-          <div class="hero-card">
-            <h3>Actualmente aprendiendo</h3>
-            <ul>
-              <li>Node.js & MongoDB</li>
-              <li>Spring Security & JWT</li>
-              <li>WebSockets & tiempo real</li>
-              <li>Arquitecturas RAG con IA</li>
-              <li>Flutter & Dart</li>
-            </ul>
+        <div class="hero-visual" data-in style="--d:3">
+          <div class="hero-frame">
+            <div class="hero-photo">
+              <img src="assets/img/perfil-hero.webp" width="660" height="880" alt="Retrato de Samuel Licht" fetchpriority="high" />
+            </div>
+            <aside class="hero-learning" aria-labelledby="learning-title">
+              <h2 id="learning-title">Actualmente aprendiendo</h2>
+              <ul>
+                <li>Node.js &amp; MongoDB</li>
+                <li>Spring Security &amp; JWT</li>
+                <li>WebSockets &amp; tiempo real</li>
+                <li>Arquitecturas RAG con IA</li>
+                <li>Flutter &amp; Dart</li>
+              </ul>
+            </aside>
           </div>
         </div>
       </div>
 
-      <a href="#sobre-mi" class="scroll-cue" aria-label="Bajar a la siguiente sección">
-        <span></span>
-      </a>
+      <a href="#sobre-mi" class="scroll-cue" aria-label="Bajar a la siguiente sección">Scroll</a>
     </section>
- 
+
     <section id="sobre-mi" class="section reveal">
       <span class="kicker">01 · Quién soy</span>
       <h2>Sobre mí</h2>
@@ -118,7 +185,7 @@
       </div>
     </section>
  
-    <!-- ===== CERTIFICACIONES ===== -->
+    
     <section id="certificaciones" class="section reveal">
       <span class="kicker">03 · Respaldo</span>
       <h2>Certificaciones</h2>
@@ -131,7 +198,6 @@
         <!-- Certificado 1 — Analytics Part 1 (más reciente) -->
         <article class="cert-card">
           <div class="cert-badge">
-            <span class="cert-icon">☁️</span>
             <span class="cert-provider">AWS</span>
           </div>
           <div class="cert-info">
@@ -142,9 +208,9 @@
               S3, Redshift, Lake Formation, Glue, Kinesis, SageMaker, Athena y más.
             </p>
             <div class="cert-meta">
-              <span class="cert-date">📅 Junio 2026</span>
+              <span class="cert-date">Junio 2026</span>
               <a href="assets/docs/Aspectos_basico_del_analisis_en_AWS_Parte_1.pdf"
-                 target="_blank" class="cert-link">Ver certificado</a>
+                 target="_blank" rel="noopener" class="cert-link">Ver certificado</a>
             </div>
           </div>
         </article>
@@ -152,7 +218,6 @@
         <!-- Certificado 2 — Cloud Practitioner Essentials -->
         <article class="cert-card">
           <div class="cert-badge">
-            <span class="cert-icon">☁️</span>
             <span class="cert-provider">AWS</span>
           </div>
           <div class="cert-info">
@@ -163,16 +228,16 @@
               precios y soporte. Base para la certificación oficial AWS Cloud Practitioner.
             </p>
             <div class="cert-meta">
-              <span class="cert-date">📅 Mayo 2026</span>
+              <span class="cert-date">Mayo 2026</span>
               <a href="assets/docs/AWS_Cloud_Practitioner_Essentials_ESP_LATAM.pdf"
-   target="_blank" class="cert-link">Ver certificado</a>
+   target="_blank" rel="noopener" class="cert-link">Ver certificado</a>
             </div>
           </div>
         </article>
  
       </div>
     </section>
-    <!-- ===== FIN CERTIFICACIONES ===== -->
+    
  
     <section id="tecnologias" class="section reveal">
       <span class="kicker">04 · Stack</span>
@@ -231,18 +296,18 @@
             <div class="project-visual">
               <svg class="project-icon" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M35 30h95c9 0 16 7 16 16v48c0 9-7 16-16 16H84l-24 20v-20H35c-9 0-16-7-16-16V46c0-9 7-16 16-16z"
-                      stroke="var(--accent)" stroke-width="3" stroke-linejoin="round" fill="rgba(227,179,65,0.06)"/>
-                <circle cx="150" cy="35" r="5" fill="var(--accent)"/>
-                <circle cx="175" cy="55" r="4" fill="var(--accent-blue)"/>
-                <circle cx="168" cy="85" r="5" fill="var(--accent)"/>
-                <circle cx="140" cy="100" r="4" fill="var(--accent-blue)"/>
+                      stroke="var(--gold)" stroke-width="3" stroke-linejoin="round" fill="rgba(201,168,106,0.06)"/>
+                <circle cx="150" cy="35" r="5" fill="var(--gold)"/>
+                <circle cx="175" cy="55" r="4" fill="var(--gold-muted)"/>
+                <circle cx="168" cy="85" r="5" fill="var(--gold)"/>
+                <circle cx="140" cy="100" r="4" fill="var(--gold-muted)"/>
                 <circle cx="146" cy="65" r="3.5" fill="#ffffff"/>
                 <path d="M146 65 L150 35 M146 65 L175 55 M146 65 L168 85 M146 65 L140 100 M168 85 L175 55"
-                      stroke="var(--accent)" stroke-width="1.5" opacity="0.55"/>
-                <circle cx="60" cy="58" r="6" fill="var(--accent)"/>
-                <circle cx="86" cy="58" r="6" fill="var(--accent-blue)"/>
-                <circle cx="112" cy="58" r="6" fill="var(--accent)"/>
-                <path d="M52 78h68" stroke="rgba(201,209,217,0.5)" stroke-width="3" stroke-linecap="round"/>
+                      stroke="var(--gold)" stroke-width="1.5" opacity="0.55"/>
+                <circle cx="60" cy="58" r="6" fill="var(--gold)"/>
+                <circle cx="86" cy="58" r="6" fill="var(--gold-muted)"/>
+                <circle cx="112" cy="58" r="6" fill="var(--gold)"/>
+                <path d="M52 78h68" stroke="rgba(163,157,146,0.5)" stroke-width="3" stroke-linecap="round"/>
               </svg>
             </div>
             <div class="project-face-info">
@@ -266,7 +331,7 @@
               <span>Embeddings</span>
               <span>LLM</span>
             </div>
-            <a href="https://github.com/samuelLicht/rag-chatbot" target="_blank" class="project-link">
+            <a href="https://github.com/samuelLicht/rag-chatbot" target="_blank" rel="noopener" class="project-link">
               Ver repositorio ↗
             </a>
           </div>
@@ -281,7 +346,7 @@
       <p>
         Puedes ver mis proyectos y avances directamente en mi perfil de GitHub.
       </p>
-      <a href="https://github.com/samuelLicht" target="_blank" class="btn btn-primary">
+      <a href="https://github.com/samuelLicht" target="_blank" rel="noopener" class="btn btn-primary">
         Ir a GitHub
       </a>
     </section>
@@ -292,7 +357,11 @@
     <p>© 2026 Samuel Licht. Todos los derechos reservados.</p>
   </footer>
  
-  <script src="script.js"></script>
+  <button class="to-top" type="button" aria-label="Volver al inicio">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
  

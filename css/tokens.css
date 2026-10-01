@@ -1,0 +1,52 @@
+/* ============================================================
+   Tokens de diseño — identidad negro + dorado champagne
+   Única fuente de verdad para colores, tipografía y medidas.
+   ============================================================ */
+:root {
+  /* Profundidad: del más oscuro al más elevado */
+  --bg: #080808;
+  --bg-2: #0f0f0e;
+  --surface: #161513;
+  --surface-2: #1f1d1a;
+  --border: #2a2723;
+  --border-strong: #3a352d;
+
+  /* Dorados: champagne (principal), apagado (líneas), brillante (solo acentos) */
+  --gold: #c9a86a;
+  --gold-muted: #8a7547;
+  --gold-bright: #f1d9a0;
+  --gold-soft: rgba(201, 168, 106, 0.12);
+  --gold-line: rgba(201, 168, 106, 0.28);
+
+  /* Texto */
+  --text: #f2ede4;
+  --text-2: #a39d92;
+
+  /* Tipografía */
+  --font-display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  /* Escala tipográfica fluida */
+  --fs-hero: clamp(3.4rem, 9.5vw, 8.5rem);
+  --fs-h2: clamp(2.2rem, 5vw, 3.6rem);
+  --fs-lead: clamp(1.05rem, 1.4vw, 1.2rem);
+  --fs-small: 0.8125rem;
+
+  /* Espaciado y layout */
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --section-y: clamp(4.5rem, 10vw, 8rem);
+  --maxw: 1240px;
+  --nav-h: 72px;
+
+  /* Bordes y sombras */
+  --radius: 14px;
+  --shadow-gold: 0 0 60px rgba(201, 168, 106, 0.1);
+  --shadow-deep: 0 30px 60px rgba(0, 0, 0, 0.55);
+
+  /* Movimiento */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-fast: 180ms;
+  --t-base: 320ms;
+  --t-slow: 600ms;
+}
