@@ -1,4 +1,4 @@
-// Intro SL: ~2.3 s. Se muestra una vez por sesión y se puede saltar con clic o Esc.
+// Intro SL: ~2.6 s. Se muestra una vez por sesión y se puede saltar con clic o Esc.
 const root = document.documentElement;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -36,7 +36,7 @@ export function runIntro() {
     }, reduceMotion ? 350 : 750);
   };
 
-  timers.push(setTimeout(leave, reduceMotion ? 700 : 2150));
+  timers.push(setTimeout(leave, reduceMotion ? 700 : 2600));
 
   intro.addEventListener("click", leave);
   window.addEventListener("keydown", (e) => e.key === "Escape" && leave(), { once: true });

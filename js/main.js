@@ -1,9 +1,11 @@
 import { runIntro } from "./intro.js";
+import { initScroll } from "./scroll.js";
 
 const root = document.documentElement;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 runIntro();
+initScroll();
 
 /* ---------- Navegación: fondo al hacer scroll + volver arriba + parallax ---------- */
 const nav = document.querySelector(".nav");
@@ -114,15 +116,9 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
 );
-document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
-/* ---------- Proyectos (acordeón existente, se rediseña en la Fase 4) ---------- */
-document.querySelectorAll(".project-face").forEach((face) => {
-  face.addEventListener("click", () => {
-    const expanded = face.getAttribute("aria-expanded") === "true";
-    face.setAttribute("aria-expanded", String(!expanded));
-    face.closest(".project-card").classList.toggle("expanded", !expanded);
-  });
-});
+document.querySelectorAll("[class~=stagger]").forEach((group) =>
+  [...group.children].forEach((child, i) => child.style.setProperty("--i", String(i)))
+);
+document.querySelectorAll(".reveal, .stagger").forEach((el) => revealObserver.observe(el));

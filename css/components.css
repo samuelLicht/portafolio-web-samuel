@@ -13,9 +13,10 @@
   z-index: 2000;
   display: grid;
   place-items: center;
+  overflow: hidden;
   background: var(--bg);
-  transition: clip-path 650ms var(--ease);
   clip-path: inset(0 0 0 0);
+  transition: clip-path 650ms var(--ease);
 }
 
 .intro.is-leaving {
@@ -23,75 +24,216 @@
   pointer-events: none;
 }
 
-.intro-mark {
-  width: min(52vw, 260px);
-  height: auto;
-  overflow: visible;
-}
-
-.intro-mark .stroke {
-  fill: none;
-  stroke: url(#intro-gold);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-}
-
-.intro-mark .s-path { animation: intro-draw 900ms var(--ease) 250ms forwards; }
-.intro-mark .l-path { animation: intro-draw 650ms var(--ease) 600ms forwards; }
-.intro-mark .rule {
-  stroke-width: 1.5;
-  animation: intro-draw 600ms var(--ease) 1000ms forwards;
-}
-
-.intro-mark .diamond {
-  fill: var(--gold-bright);
+/* Resplandor ambiental que llena la pantalla */
+.intro-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 50% at 50% 50%, rgba(201, 168, 106, 0.2), transparent 70%),
+    radial-gradient(ellipse 90% 30% at 50% 100%, rgba(138, 117, 71, 0.14), transparent 70%);
   opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center;
-  transform: scale(0.2);
-  animation: intro-pop 350ms var(--ease) 1400ms forwards;
+  animation: intro-fade 900ms ease-out 100ms forwards;
 }
 
-/* Destello metálico recortado por la forma de las letras */
-.intro-mark .shine {
-  transform: translateX(-130%);
-  animation: intro-shine 650ms ease-in-out 1300ms forwards;
+/* Marco de filetes dorados que se dibujan desde el centro */
+.intro-frame {
+  position: absolute;
+  inset: clamp(14px, 3vw, 34px);
+  pointer-events: none;
 }
 
-.intro-mark {
-  filter: drop-shadow(0 0 0 rgba(241, 217, 160, 0));
-  animation: intro-glow 700ms ease-out 1200ms forwards;
+.intro-frame .ln {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold-bright) 50%, var(--gold) 80%, transparent);
+  opacity: 0.75;
 }
 
-@keyframes intro-draw {
-  to { stroke-dashoffset: 0; }
+.intro-frame .t,
+.intro-frame .b {
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: scaleX(0);
+  animation: intro-line-x 1000ms var(--ease) 100ms forwards;
 }
 
-@keyframes intro-pop {
-  to { opacity: 1; transform: scale(1); }
+.intro-frame .t { top: 0; }
+.intro-frame .b { bottom: 0; }
+
+.intro-frame .l,
+.intro-frame .r {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--gold) 20%, var(--gold-bright) 50%, var(--gold) 80%, transparent);
+  transform: scaleY(0);
+  animation: intro-line-y 1000ms var(--ease) 250ms forwards;
 }
 
-@keyframes intro-shine {
-  to { transform: translateX(130%); }
+.intro-frame .l { left: 0; }
+.intro-frame .r { right: 0; }
+
+/* Polvo dorado discreto */
+.intro-dust {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
-@keyframes intro-glow {
-  to { filter: drop-shadow(0 0 14px rgba(201, 168, 106, 0.45)); }
+.intro-dust i {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: var(--gold-bright);
+  box-shadow: 0 0 10px rgba(241, 217, 160, 0.8);
+  opacity: 0;
+  animation: intro-dust 1800ms ease-out var(--d) forwards;
+}
+
+/* Frases verticales: cada carácter sube desde abajo, letra bajo letra */
+.intro-vert {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", "MS PMincho", serif;
+  font-weight: 500;
+  font-size: clamp(1.15rem, 2.5vw, 2.1rem);
+  line-height: 1.35;
+  color: var(--gold);
+  text-shadow: 0 0 18px rgba(201, 168, 106, 0.35);
+  transform: translateY(-50%);
+}
+
+.intro-vert.left { left: clamp(28px, 9vw, 150px); }
+.intro-vert.right { right: clamp(28px, 9vw, 150px); }
+
+.intro-vert::before,
+.intro-vert::after {
+  content: "";
+  width: 1px;
+  height: clamp(28px, 7vh, 70px);
+  background: linear-gradient(var(--gold-line), transparent);
+}
+
+.intro-vert::before { margin-bottom: 0.8rem; transform: scaleY(-1); }
+.intro-vert::after { margin-top: 0.8rem; }
+
+.intro-vert span {
+  display: block;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: intro-char-in 650ms var(--ease) calc(500ms + var(--i) * 70ms) forwards,
+    intro-char-drift 2400ms linear 500ms forwards;
+}
+
+/* Logo */
+.intro-logo {
+  position: relative;
+  width: min(74vw, 520px);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transform: scale(0.94);
+  filter: blur(6px);
+  clip-path: circle(0% at 50% 50%);
+  animation: intro-logo-in 1100ms var(--ease) 250ms forwards;
+}
+
+.intro-logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Destello metálico: solo ilumina los tonos dorados (overlay) */
+.intro-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 246, 220, 0.95) 50%, transparent 65%);
+  background-size: 250% 100%;
+  background-position: 160% 0;
+  mix-blend-mode: overlay;
+  animation: intro-shine 900ms ease-in-out 1150ms forwards;
+}
+
+.intro-cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(30px, 7vh, 70px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem 1.2rem;
+  padding: 0 clamp(2.5rem, 12vw, 3rem);
+  font-family: var(--font-mono);
+  font-size: clamp(0.62rem, 1.1vw, 0.78rem);
+  letter-spacing: 0.16em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-2);
+  opacity: 0;
+  animation: intro-fade 700ms ease-out 1100ms forwards;
+}
+
+.intro-cap b {
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+
+@keyframes intro-fade { to { opacity: 1; } }
+@keyframes intro-line-x { to { transform: scaleX(1); } }
+@keyframes intro-line-y { to { transform: scaleY(1); } }
+
+@keyframes intro-logo-in {
+  to { opacity: 1; transform: scale(1); filter: blur(0); clip-path: circle(75% at 50% 50%); }
+}
+
+@keyframes intro-shine { to { background-position: -60% 0; } }
+
+@keyframes intro-char-in { to { opacity: 1; transform: translateY(0); } }
+
+/* Deriva continua hacia arriba mientras dura la intro */
+@keyframes intro-char-drift {
+  from { translate: 0 0; }
+  to { translate: 0 -26px; }
+}
+
+@keyframes intro-dust {
+  0% { opacity: 0; transform: translateY(18px) scale(0.5); }
+  30% { opacity: 0.9; }
+  100% { opacity: 0; transform: translateY(-40px) scale(1); }
+}
+
+@media (max-width: 640px) {
+  .intro-vert { font-size: 1.05rem; }
+  .intro-vert.left { left: 14px; }
+  .intro-vert.right { right: 14px; }
+  .intro-logo { width: 66vw; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .intro-on .intro { transition: opacity 300ms linear; clip-path: none; }
   .intro.is-leaving { opacity: 0; clip-path: none; }
-  .intro-mark,
-  .intro-mark .stroke,
-  .intro-mark .diamond,
-  .intro-mark .shine { animation: none; }
-  .intro-mark .stroke { stroke-dashoffset: 0; }
-  .intro-mark .diamond { opacity: 1; transform: none; }
-  .intro-mark .shine { display: none; }
+  .intro-glow,
+  .intro-cap,
+  .intro-vert span,
+  .intro-logo,
+  .intro-frame .ln,
+  .intro-logo::after,
+  .intro-dust i { animation: none; }
+  .intro-glow, .intro-cap { opacity: 1; }
+  .intro-vert span { opacity: 1; transform: none; }
+  .intro-logo { opacity: 1; transform: none; filter: none; clip-path: none; }
+  .intro-frame .ln { transform: none; }
+  .intro-logo::after, .intro-dust { display: none; }
 }
 
 /* ---------- Navegación ---------- */
@@ -403,3 +545,67 @@
 .to-top:hover svg { transform: translateY(-2px); }
 .to-top:active { transform: scale(0.95); }
 .to-top svg { width: 18px; height: 18px; transition: transform var(--t-fast) var(--ease); }
+
+/* ---------- Frases laterales en japonés (solo pantallas anchas) ---------- */
+.side-jp {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  .side-jp {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1200ms var(--ease) 300ms;
+  }
+
+  .ready .side-jp {
+    opacity: 1;
+  }
+
+  .side-jp.left { left: clamp(14px, 2.2vw, 48px); }
+  .side-jp.right { right: clamp(14px, 2.2vw, 48px); }
+
+  .side-jp p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(1.1rem, 1.35vw, 1.6rem);
+    line-height: 1.45;
+    color: var(--gold);
+  }
+
+  .side-jp p::before,
+  .side-jp p::after {
+    content: "";
+    width: 1px;
+    height: clamp(40px, 9vh, 90px);
+    background: linear-gradient(var(--gold-line), transparent);
+  }
+
+  .side-jp p::before { margin-bottom: 1rem; transform: scaleY(-1); }
+  .side-jp p::after { margin-top: 1rem; }
+
+  /* Cada carácter sube y se desvanece en cadena, de forma continua */
+  .side-jp span {
+    display: block;
+    opacity: 0.2;
+    animation: jp-rise 7s ease-in-out calc(var(--i) * 0.32s) infinite;
+  }
+}
+
+@keyframes jp-rise {
+  0% { opacity: 0.12; transform: translateY(16px); }
+  30%, 55% { opacity: 0.8; transform: translateY(0); }
+  100% { opacity: 0.12; transform: translateY(-16px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .side-jp span { animation: none; opacity: 0.5; }
+}

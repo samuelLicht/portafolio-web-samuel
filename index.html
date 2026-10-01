@@ -25,47 +25,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap&text=%E6%8C%91%E6%88%A6%E3%81%AA%E3%81%8F%E3%81%97%E3%81%A6%E6%88%90%E9%95%B7%E3%81%AA%E3%81%97%E6%9C%AA%E6%9D%A5%E3%81%AF%E8%87%AA%E5%88%86%E3%81%AE%E6%89%8B%E3%81%A7%E7%AF%89%E3%81%8F" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/sections.css" />
+  <link rel="preload" as="image" href="assets/img/logo-sl.webp" type="image/webp" />
   <link rel="preload" as="image" href="assets/img/perfil-hero.webp" type="image/webp" />
 </head>
 <body>
   <a href="#contenido" class="skip-link">Saltar al contenido</a>
 
-  <!-- Intro SL (monograma original, dibujado con trazos) -->
+  <!-- Intro SL: monograma dorado + frases en japonés que suben -->
   <div class="intro" id="intro" aria-hidden="true">
-    <svg class="intro-mark" viewBox="0 0 240 150" xmlns="http://www.w3.org/2000/svg" role="presentation">
-      <defs>
-        <linearGradient id="intro-gold" gradientUnits="userSpaceOnUse" x1="30" y1="10" x2="210" y2="140">
-          <stop offset="0" stop-color="#f1d9a0" />
-          <stop offset="0.5" stop-color="#c9a86a" />
-          <stop offset="1" stop-color="#8a7547" />
-        </linearGradient>
-        <linearGradient id="intro-shine" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#fff6dc" stop-opacity="0" />
-          <stop offset="0.5" stop-color="#fff6dc" stop-opacity="0.95" />
-          <stop offset="1" stop-color="#fff6dc" stop-opacity="0" />
-        </linearGradient>
-        <mask id="intro-letters" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="150">
-          <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M98 38C92 22 72 18 58 24C40 32 40 54 60 64C80 74 100 82 96 104C92 122 66 126 50 116C41 110 36 102 35 94" />
-            <path d="M140 18V112H208" />
-          </g>
-        </mask>
-      </defs>
-      <path class="stroke s-path" pathLength="1" d="M98 38C92 22 72 18 58 24C40 32 40 54 60 64C80 74 100 82 96 104C92 122 66 126 50 116C41 110 36 102 35 94" />
-      <path class="stroke l-path" pathLength="1" d="M140 18V112H208" />
-      <path class="stroke rule" pathLength="1" d="M30 134H208" />
-      <path class="diamond" d="M119 128l6 6-6 6-6-6z" />
-      <g mask="url(#intro-letters)">
-        <rect class="shine" x="20" y="0" width="70" height="150" fill="url(#intro-shine)" />
-      </g>
-    </svg>
+    <div class="intro-glow"></div>
+    <div class="intro-frame"><i class="ln t"></i><i class="ln b"></i><i class="ln l"></i><i class="ln r"></i></div>
+    <div class="intro-dust"><i style="--x:8%;--y:18%;--d:0.1s;--s:3px"></i><i style="--x:16%;--y:72%;--d:0.5s;--s:2px"></i><i style="--x:24%;--y:38%;--d:0.9s;--s:2px"></i><i style="--x:31%;--y:86%;--d:0.3s;--s:3px"></i><i style="--x:39%;--y:12%;--d:0.7s;--s:2px"></i><i style="--x:47%;--y:64%;--d:1.1s;--s:2px"></i><i style="--x:55%;--y:24%;--d:0.2s;--s:3px"></i><i style="--x:62%;--y:80%;--d:0.8s;--s:2px"></i><i style="--x:70%;--y:14%;--d:0.4s;--s:2px"></i><i style="--x:77%;--y:56%;--d:1.0s;--s:3px"></i><i style="--x:84%;--y:30%;--d:0.6s;--s:2px"></i><i style="--x:91%;--y:76%;--d:0.2s;--s:2px"></i><i style="--x:94%;--y:12%;--d:0.9s;--s:3px"></i><i style="--x:4%;--y:52%;--d:0.7s;--s:2px"></i><i style="--x:66%;--y:46%;--d:1.2s;--s:2px"></i><i style="--x:20%;--y:8%;--d:1.0s;--s:2px"></i></div>
+    <p class="intro-vert left" lang="ja"><span style="--i:0">挑</span><span style="--i:1">戦</span><span style="--i:2">な</span><span style="--i:3">く</span><span style="--i:4">し</span><span style="--i:5">て</span><span style="--i:6">成</span><span style="--i:7">長</span><span style="--i:8">な</span><span style="--i:9">し</span></p>
+    <p class="intro-vert right" lang="ja"><span style="--i:0">未</span><span style="--i:1">来</span><span style="--i:2">は</span><span style="--i:3">自</span><span style="--i:4">分</span><span style="--i:5">の</span><span style="--i:6">手</span><span style="--i:7">で</span><span style="--i:8">築</span><span style="--i:9">く</span></p>
+    <div class="intro-logo">
+      <img src="assets/img/logo-sl.webp" width="900" height="738" alt="" />
+    </div>
+    <p class="intro-cap"><span>Sin desafío, no hay crecimiento</span><b></b><span>El futuro lo construyo con mis propias manos</span></p>
   </div>
 
+  <!-- Frases en japonés: decoración lateral en pantallas anchas -->
+  <div class="side-jp left" aria-hidden="true" lang="ja"><p><span style="--i:0">挑</span><span style="--i:1">戦</span><span style="--i:2">な</span><span style="--i:3">く</span><span style="--i:4">し</span><span style="--i:5">て</span><span style="--i:6">成</span><span style="--i:7">長</span><span style="--i:8">な</span><span style="--i:9">し</span></p></div>
+  <div class="side-jp right" aria-hidden="true" lang="ja"><p><span style="--i:0">未</span><span style="--i:1">来</span><span style="--i:2">は</span><span style="--i:3">自</span><span style="--i:4">分</span><span style="--i:5">の</span><span style="--i:6">手</span><span style="--i:7">で</span><span style="--i:8">築</span><span style="--i:9">く</span></p></div>
+
   <header class="nav">
+    <div class="scroll-progress" aria-hidden="true"></div>
     <a href="#inicio" class="nav-brand" aria-label="Samuel Licht, ir al inicio">
       <span class="mono" aria-hidden="true">SL</span>
       <span>Samuel Licht</span>
@@ -87,6 +76,18 @@
   </header>
 
   <main id="contenido">
+    <svg class="vein" viewBox="0 0 1000 4000" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="vein-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1000" y2="0">
+          <stop offset="0" stop-color="#8a7547" /><stop offset="0.5" stop-color="#f1d9a0" /><stop offset="1" stop-color="#c9a86a" />
+        </linearGradient>
+      </defs>
+      <path pathLength="1" d="M500 0C470 300 620 500 540 800S330 1200 460 1500S700 1900 560 2300S380 2700 520 3100S640 3600 500 4000" />
+      <path pathLength="1" d="M540 800C640 860 760 840 840 940S900 1100 960 1160" />
+      <path pathLength="1" d="M460 1500C360 1560 250 1540 170 1640S90 1800 40 1860" />
+      <path pathLength="1" d="M560 2300C680 2340 800 2330 880 2430S930 2560 970 2620" />
+      <path pathLength="1" d="M520 3100C420 3150 300 3140 220 3250S140 3400 90 3440" />
+    </svg>
 
     <section id="inicio" class="hero">
       <div class="hero-grid">
@@ -114,7 +115,7 @@
         <div class="hero-visual" data-in style="--d:3">
           <div class="hero-frame">
             <div class="hero-photo">
-              <img src="assets/img/perfil-hero.webp" width="660" height="880" alt="Retrato de Samuel Licht" fetchpriority="high" />
+              <img src="assets/img/perfil-hero.webp" width="720" height="960" alt="Retrato de Samuel Licht" fetchpriority="high" />
             </div>
             <aside class="hero-learning" aria-labelledby="learning-title">
               <h2 id="learning-title">Actualmente aprendiendo</h2>
@@ -133,168 +134,131 @@
       <a href="#sobre-mi" class="scroll-cue" aria-label="Bajar a la siguiente sección">Scroll</a>
     </section>
 
-    <section id="sobre-mi" class="section reveal">
-      <span class="kicker">01 · Quién soy</span>
-      <h2>Sobre mí</h2>
-      <p>
-        Me gusta crear proyectos funcionales, mejorar interfaces, aprender nuevas tecnologías
-        y construir aplicaciones que puedan resolver problemas reales.
-      </p>
-      <p>
-        Este portafolio es el espacio donde voy documentando mi progreso como desarrollador —
-        desde proyectos frontend hasta APIs REST, sistemas fullstack e inteligencia artificial.
-      </p>
-    </section>
- 
-    <section id="aprendizaje" class="section reveal">
-      <span class="kicker">02 · En progreso</span>
-      <h2>Ruta de aprendizaje</h2>
-      <p>
-        Esta sección muestra las áreas en las que estoy fortaleciendo mis conocimientos
-        como desarrollador y estudiante de Ingeniería de Sistemas.
-      </p>
-      <div class="learning-grid">
-        <article class="learning-card">
-          <h3>Desarrollo Web</h3>
-          <p>
-            Construcción de interfaces modernas usando HTML, CSS y JavaScript,
-            enfocadas en diseño responsive y buena experiencia de usuario.
+    <section id="sobre-mi" class="section">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="kicker">01 · Quién soy</span>
+          <h2>Sobre mí</h2>
+        </header>
+        <div class="about-grid reveal">
+          <p class="about-statement" data-scrub-words>
+            Me gusta crear <em>proyectos funcionales</em>, mejorar interfaces,
+            aprender nuevas tecnologías y construir aplicaciones que puedan resolver problemas reales.
           </p>
-        </article>
-        <article class="learning-card">
-          <h3>Backend</h3>
-          <p>
-            Desarrollo de APIs REST con Java y Spring Boot, y Node.js con Express.
-            Autenticación JWT, Spring Security y bases de datos relacionales y no relacionales.
+          <p class="about-body">
+            Este portafolio es el espacio donde voy documentando mi progreso como desarrollador,
+            desde proyectos frontend hasta APIs REST, sistemas fullstack e inteligencia artificial.
           </p>
-        </article>
-        <article class="learning-card">
-          <h3>Análisis de Datos</h3>
-          <p>
-            Uso de Python para procesar información, generar reportes,
-            visualizar datos y automatizar tareas.
-          </p>
-        </article>
-        <article class="learning-card">
-          <h3>Inteligencia Artificial</h3>
-          <p>
-            Desarrollo de chatbots con arquitectura RAG, embeddings semánticos,
-            indexado vectorial con FAISS y modelos de lenguaje.
-          </p>
-        </article>
+        </div>
+        <dl class="about-facts stagger">
+          <div><dt>Formación</dt><dd>Ingeniería de Sistemas</dd></div>
+          <div><dt>Intereses</dt><dd>Web, backend, IA y análisis de datos</dd></div>
+          <div><dt>Aprendiendo ahora</dt><dd>Node.js, Spring Security, RAG y Flutter</dd></div>
+        </dl>
       </div>
     </section>
- 
-    
-    <section id="certificaciones" class="section reveal">
-      <span class="kicker">03 · Respaldo</span>
-      <h2>Certificaciones</h2>
-      <p>
-        Cursos y certificaciones completados que complementan mi formación
-        como desarrollador e ingeniero de sistemas.
-      </p>
-      <div class="certs-grid">
- 
-        <!-- Certificado 1 — Analytics Part 1 (más reciente) -->
-        <article class="cert-card">
-          <div class="cert-badge">
-            <span class="cert-provider">AWS</span>
-          </div>
-          <div class="cert-info">
-            <h3>Fundamentals of Analytics on AWS – Part 1</h3>
-            <p class="cert-issuer">Amazon Web Services · AWS Training &amp; Certification</p>
-            <p class="cert-desc">
-              Las 5 V de los macrodatos y los servicios de AWS que las resuelven:
-              S3, Redshift, Lake Formation, Glue, Kinesis, SageMaker, Athena y más.
-            </p>
-            <div class="cert-meta">
-              <span class="cert-date">Junio 2026</span>
-              <a href="assets/docs/Aspectos_basico_del_analisis_en_AWS_Parte_1.pdf"
-                 target="_blank" rel="noopener" class="cert-link">Ver certificado</a>
+
+    <section id="aprendizaje" class="section">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="kicker">02 · En progreso</span>
+          <h2>Ruta de aprendizaje</h2>
+          <p>Las áreas en las que estoy fortaleciendo mis conocimientos como desarrollador y estudiante de Ingeniería de Sistemas.</p>
+        </header>
+        <ol class="learn-list stagger">
+          <li class="learn-row">
+            <span class="num">01</span>
+            <h3>Desarrollo Web</h3>
+            <p>Construcción de interfaces modernas usando HTML, CSS y JavaScript, enfocadas en diseño responsive y buena experiencia de usuario.</p>
+          </li>
+          <li class="learn-row">
+            <span class="num">02</span>
+            <h3>Backend</h3>
+            <p>Desarrollo de APIs REST con Java y Spring Boot, y Node.js con Express. Autenticación JWT, Spring Security y bases de datos relacionales y no relacionales.</p>
+          </li>
+          <li class="learn-row">
+            <span class="num">03</span>
+            <h3>Análisis de Datos</h3>
+            <p>Uso de Python para procesar información, generar reportes, visualizar datos y automatizar tareas.</p>
+          </li>
+          <li class="learn-row">
+            <span class="num">04</span>
+            <h3>Inteligencia Artificial</h3>
+            <p>Desarrollo de chatbots con arquitectura RAG, embeddings semánticos, indexado vectorial con FAISS y modelos de lenguaje.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="certificaciones" class="section">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="kicker">03 · Respaldo</span>
+          <h2>Certificaciones</h2>
+          <p>Cursos y certificaciones completados que complementan mi formación como desarrollador e ingeniero de sistemas.</p>
+        </header>
+        <ol class="timeline stagger" data-scrub>
+          <li class="cert">
+            <time class="cert-date" datetime="2026-06">Junio 2026</time>
+            <div class="cert-body">
+              <span class="cert-provider">AWS</span>
+              <h3>Fundamentals of Analytics on AWS – Part 1</h3>
+              <p class="cert-issuer">Amazon Web Services · AWS Training &amp; Certification</p>
+              <p>Las 5 V de los macrodatos y los servicios de AWS que las resuelven: S3, Redshift, Lake Formation, Glue, Kinesis, SageMaker, Athena y más.</p>
+              <a href="assets/docs/Aspectos_basico_del_analisis_en_AWS_Parte_1.pdf" target="_blank" rel="noopener" class="link-quiet">Ver certificado ↗</a>
             </div>
-          </div>
-        </article>
- 
-        <!-- Certificado 2 — Cloud Practitioner Essentials -->
-        <article class="cert-card">
-          <div class="cert-badge">
-            <span class="cert-provider">AWS</span>
-          </div>
-          <div class="cert-info">
-            <h3>AWS Cloud Practitioner Essentials</h3>
-            <p class="cert-issuer">Amazon Web Services · AWS Training &amp; Certification</p>
-            <p class="cert-desc">
-              Fundamentos de la nube AWS: servicios core, seguridad, arquitectura,
-              precios y soporte. Base para la certificación oficial AWS Cloud Practitioner.
-            </p>
-            <div class="cert-meta">
-              <span class="cert-date">Mayo 2026</span>
-              <a href="assets/docs/AWS_Cloud_Practitioner_Essentials_ESP_LATAM.pdf"
-   target="_blank" rel="noopener" class="cert-link">Ver certificado</a>
+          </li>
+          <li class="cert">
+            <time class="cert-date" datetime="2026-05">Mayo 2026</time>
+            <div class="cert-body">
+              <span class="cert-provider">AWS</span>
+              <h3>AWS Cloud Practitioner Essentials</h3>
+              <p class="cert-issuer">Amazon Web Services · AWS Training &amp; Certification</p>
+              <p>Fundamentos de la nube AWS: servicios core, seguridad, arquitectura, precios y soporte. Base para la certificación oficial AWS Cloud Practitioner.</p>
+              <a href="assets/docs/AWS_Cloud_Practitioner_Essentials_ESP_LATAM.pdf" target="_blank" rel="noopener" class="link-quiet">Ver certificado ↗</a>
             </div>
-          </div>
-        </article>
- 
+          </li>
+        </ol>
       </div>
     </section>
-    
- 
-    <section id="tecnologias" class="section reveal">
-      <span class="kicker">04 · Stack</span>
-      <h2>Tecnologías</h2>
-      <div class="skills-groups">
-        <div class="skills-group">
-          <h3 class="skills-group-title">Frontend</h3>
-          <div class="skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-        </div>
 
-        <div class="skills-group">
-          <h3 class="skills-group-title">Backend</h3>
-          <div class="skills">
-            <span>Java</span>
-            <span>Spring Boot</span>
-            <span>Node.js</span>
-            <span>Express</span>
-            <span>JWT</span>
-            <span>Socket.io</span>
+    <section id="tecnologias" class="section">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="kicker">04 · Stack</span>
+          <h2>Tecnologías</h2>
+        </header>
+        <div class="tech-grid stagger">
+          <div class="tech-group">
+            <h3>Frontend</h3>
+            <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
           </div>
-        </div>
-
-        <div class="skills-group">
-          <h3 class="skills-group-title">Bases de datos</h3>
-          <div class="skills">
-            <span>MySQL</span>
-            <span>PostgreSQL</span>
-            <span>MongoDB</span>
+          <div class="tech-group">
+            <h3>Backend</h3>
+            <ul><li>Java</li><li>Spring Boot</li><li>Node.js</li><li>Express</li><li>JWT</li><li>Socket.io</li></ul>
           </div>
-        </div>
-
-        <div class="skills-group">
-          <h3 class="skills-group-title">Herramientas &amp; Lenguajes</h3>
-          <div class="skills">
-            <span>Python</span>
-            <span>Git</span>
-            <span>GitHub</span>
+          <div class="tech-group">
+            <h3>Bases de datos</h3>
+            <ul><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li></ul>
+          </div>
+          <div class="tech-group">
+            <h3>Herramientas &amp; Lenguajes</h3>
+            <ul><li>Python</li><li>Git</li><li>GitHub</li></ul>
           </div>
         </div>
       </div>
     </section>
- 
-    <section id="proyectos" class="section reveal">
-      <span class="kicker">05 · Trabajo</span>
-      <h2>Proyectos</h2>
-      <p>Selecciona un proyecto para ver los detalles.</p>
 
-      <div class="projects-grid">
-
-        <article class="project-card">
-          <button class="project-face" type="button" aria-expanded="false" aria-controls="proj-rag-chatbot">
-            <div class="project-visual">
-              <svg class="project-icon" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <section id="proyectos" class="section">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <span class="kicker">05 · Trabajo</span>
+          <h2>Proyectos</h2>
+        </header>
+        <article class="project-feature reveal" data-spot>
+          <div class="project-media" aria-hidden="true">
+            <span class="project-index" data-parallax="0.06">01</span>
+            <svg class="project-art" data-parallax="0.12" viewBox="0 0 200 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M35 30h95c9 0 16 7 16 16v48c0 9-7 16-16 16H84l-24 20v-20H35c-9 0-16-7-16-16V46c0-9 7-16 16-16z"
                       stroke="var(--gold)" stroke-width="3" stroke-linejoin="round" fill="rgba(201,168,106,0.06)"/>
                 <circle cx="150" cy="35" r="5" fill="var(--gold)"/>
@@ -309,54 +273,72 @@
                 <circle cx="112" cy="58" r="6" fill="var(--gold)"/>
                 <path d="M52 78h68" stroke="rgba(163,157,146,0.5)" stroke-width="3" stroke-linecap="round"/>
               </svg>
-            </div>
-            <div class="project-face-info">
-              <h3>RAG Chatbot</h3>
-              <p class="project-subtitle">Chatbot inteligente con recuperación de información</p>
-            </div>
-            <span class="project-toggle">
-              Ver proyecto
-              <span class="chevron" aria-hidden="true">⌄</span>
-            </span>
-          </button>
-
-          <div class="project-details" id="proj-rag-chatbot">
-            <p>
-              Chatbot inteligente basado en recuperación de información (RAG) desarrollado
-              en Python. Recuperación semántica por embeddings e indexado vectorial con FAISS.
-            </p>
-            <div class="project-stack">
-              <span>Python</span>
-              <span>FAISS</span>
-              <span>Embeddings</span>
-              <span>LLM</span>
-            </div>
-            <a href="https://github.com/samuelLicht/rag-chatbot" target="_blank" rel="noopener" class="project-link">
-              Ver repositorio ↗
+          </div>
+          <div class="project-info">
+            <span class="kicker">Proyecto destacado</span>
+            <h3>RAG Chatbot</h3>
+            <p class="project-subtitle">Chatbot inteligente con recuperación de información</p>
+            <p>Chatbot inteligente basado en recuperación de información (RAG) desarrollado en Python. Recuperación semántica por embeddings e indexado vectorial con FAISS.</p>
+            <ul class="project-stack">
+              <li>Python</li><li>FAISS</li><li>Embeddings</li><li>LLM</li>
+            </ul>
+            <a href="https://github.com/samuelLicht/rag-chatbot" target="_blank" rel="noopener" class="btn btn-ghost">
+              Ver repositorio
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
           </div>
         </article>
-
       </div>
     </section>
- 
-    <section id="contacto" class="section contact-section reveal">
-      <span class="kicker">06 · Hablemos</span>
-      <h2>Contacto</h2>
-      <p>
-        Puedes ver mis proyectos y avances directamente en mi perfil de GitHub.
-      </p>
-      <a href="https://github.com/samuelLicht" target="_blank" rel="noopener" class="btn btn-primary">
-        Ir a GitHub
-      </a>
+
+    <section id="contacto" class="section contact">
+      <div class="wrap contact-grid">
+        <div class="contact-copy reveal">
+          <span class="kicker">06 · Hablemos</span>
+          <h2>Construyamos <em>algo</em> juntos.</h2>
+          <p>Puedes ver mis proyectos y avances directamente en mi perfil de GitHub.</p>
+          <div class="hero-actions">
+            <a href="https://github.com/samuelLicht" target="_blank" rel="noopener" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              Ir a GitHub
+            </a>
+            <a href="assets/docs/Samuel_Rodolfo_Diaz_Licht_CV.pdf" download class="btn btn-ghost">Descargar CV</a>
+          </div>
+        </div>
+        <ul class="contact-list stagger">
+          <li>
+            <a href="https://github.com/samuelLicht" target="_blank" rel="noopener">
+              <span class="label">GitHub</span>
+              <span class="value">samuelLicht</span>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </li>
+          <!-- Para añadir correo o LinkedIn, duplica el <li> de arriba con el mismo formato:
+               <a href="mailto:TU_CORREO"> <span class="label">Correo</span> <span class="value">TU_CORREO</span> (flecha) </a> -->
+        </ul>
+      </div>
     </section>
- 
+
   </main>
- 
-  <footer>
-    <p>© 2026 Samuel Licht. Todos los derechos reservados.</p>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#inicio" class="nav-brand" aria-label="Samuel Licht, volver al inicio">
+        <span class="mono" aria-hidden="true">SL</span>
+        <span>Samuel Licht</span>
+      </a>
+      <nav aria-label="Pie de página">
+        <ul class="footer-links">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#certificaciones">Certificaciones</a></li>
+          <li><a href="https://github.com/samuelLicht" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </nav>
+      <p class="footer-copy">© 2026 Samuel Licht. Todos los derechos reservados.</p>
+    </div>
   </footer>
- 
+
   <button class="to-top" type="button" aria-label="Volver al inicio">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
   </button>
